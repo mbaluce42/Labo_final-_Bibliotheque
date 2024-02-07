@@ -1,0 +1,34 @@
+﻿<Window x:Class="GUI_Bibliotheque.ModifierAbonneWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modifier Abonné" Height="300" Width="400">
+    <Grid Background="#FFDCECFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Nom:" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="nomTextBox" Margin="5"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Prénom:" Margin="5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="prenomTextBox" Margin="5"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Adresse:" Margin="5"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="adresseTextBox" Margin="5"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Date de naissance:" Margin="5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="dnTextBox" Margin="5"/>
+
+        <Button Grid.Row="4" Grid.Column="0" Content="Modifier" Width="80" Margin="5" Click="ModifierButton_Click"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="Annuler" Width="80" Margin="5" Click="AnnulerButton_Click"/>
+    </Grid>
+</Window>

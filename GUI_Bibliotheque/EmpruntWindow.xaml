@@ -1,0 +1,60 @@
+﻿<Window x:Class="GUI_Bibliotheque.EmpruntWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Bibliotheque"
+        mc:Ignorable="d"
+        Title="Emprunts bibliotheque" Height="500" Width="550">
+    <Grid Background="#FFDCECFA">
+        <!-- Partie supérieure -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Ligne 0 -->
+            <TextBlock Grid.Row="0" Text="Emprunt des livres" FontSize="20" FontWeight="Bold"/>
+            <!-- Ligne 1 -->
+            <TextBlock Grid.Row="1" Text="Id Abonné" Margin="0,10,0,0" />
+            <TextBox Grid.Row="1" x:Name="idEmpruntTextBox" Margin="79,10,69,26"/>
+            <!-- Ligne 2 -->
+            <TextBlock Grid.Row="2" Text="Livres" Margin="0,10,0,0"/>
+            <ComboBox Grid.Row="2" x:Name="livresEmpruntComboBox" Margin="79,10,69,26"/>
+            <!-- Ligne 3 -->
+            <Button Grid.Row="3" Content="Valider" Margin="79,10,69,26" Click="validerEmpruntButton_Click"/>
+        </Grid>
+
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Ligne 0 -->
+            <TextBlock Grid.Row="0" Text="Retour des livres" FontSize="20" FontWeight="Bold"/>
+            <!-- Ligne 1 -->
+            <TextBlock Grid.Row="1" Text="Id Abonné:" Margin="0,10,0,0"/>
+            <TextBox Grid.Row="1" x:Name="idRetourTextBox" Margin="79,10,69,26"/>
+            <!-- Ligne 2 -->
+            <TextBlock Grid.Row="2" Text="Livre:" Margin="0,10,0,0"/>
+            <ComboBox Grid.Row="2" x:Name="livresRetourComboBox" Margin="79,10,69,26"/>
+            <!-- Ligne 3 -->
+            <Button Grid.Row="3" Content="Valider" Click="validerRetourButton_Click" Margin="79,10,69,26"/>
+            <!-- Ligne 4 -->
+            <Button Grid.Row="4" Content="Livre" Click="livresButton_Click" Margin="0,10,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,93 @@
+﻿<Window x:Class="GUI_Bibliotheque.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Bibliotheque"
+        mc:Ignorable="d"
+        Title="Livres bibliotheque" Height="450" Width="800">
+    <Grid Background="#FFDCECFA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="700"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Ligne 0: Enregistrement des livres -->
+            <TextBlock Grid.Row="0" Text="Enregistrement des livres" FontSize="16" FontWeight="Bold" />
+
+            <!-- Ligne 1: Grille 6x3 -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Ligne 1: ISBN -->
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="ISBN" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="isbnTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+                <Button Grid.Row="0" Grid.Column="2" Content="RechercherI"  VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="RechercherI"/>
+
+                <!-- Ligne 2: Titre -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Titre" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="titreTextBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+                <Button x:Name="RechercherT" Grid.Row="1" Grid.Column="3" Content="RechercherT"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                <!-- Ligne 3: Auteur -->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Auteur" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="auteurTextBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+                <Button x:Name="RechercherA" Grid.Row="2" Grid.Column="3" Content="RechercherA"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                <!-- Ligne 4: Editeur -->
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Editeur" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="editeurTextBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+                <Button x:Name="RechercherE" Grid.Row="3" Grid.Column="3" Content="RechercherE"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                <!-- Ligne 5: Date de publication -->
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Date de publication" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="dpTextBox" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+
+                <!-- Ligne 6: Nombre de pages -->
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Nombre de pages" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="nbpTextBox" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="78" />
+
+            </Grid>
+            <Button x:Name="AjouterButton" Content="Ajouter" Click="AjouterButton_Click" HorizontalAlignment="Left" Margin="33,18,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="73"/>
+            <Button x:Name="SupprimerButton" Content="Supprimer" Click="SupprimerButton_Click" HorizontalAlignment="Left" Margin="33,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="73"/>
+            <Button x:Name="ModifierButton" Content="Modifier" Click="ModifierButton_Click" HorizontalAlignment="Left" Margin="33,113,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="73"/>
+            <Button x:Name="AbonneButton" Content="Abonne" Click="AbonneButton_Click" HorizontalAlignment="Left" Margin="163,18,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="73"/>
+            <Button x:Name="EmpruntButton" Content="Emprunt" Click="EmpruntButton_Click"  HorizontalAlignment="Left" Margin="163,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="73"/>
+            <Button x:Name="RequetetButton" Content="Requete" Click="RequeteButton_Click" HorizontalAlignment="Left" Margin="163,113,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="73"/>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <DataGrid x:Name="livresDataGrid" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Titre" Binding="{Binding Path=Titre}" />
+                    <DataGridTextColumn Header="Auteur" Binding="{Binding Path=Auteur}" />
+                    <DataGridTextColumn Header="Editeur" Binding="{Binding Path=Editeur}" />
+                    <DataGridTextColumn Header="ISBN" Binding="{Binding Path=Isbn}" />
+                    <DataGridTextColumn Header="Date de publication" Binding="{Binding Path=DatePublication, StringFormat={}{0:dd/MM/yyyy}}" />
+                    <DataGridTextColumn Header="Nombre de pages" Binding="{Binding Path=NbrPages}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="30" Margin="216,0,0,0" VerticalAlignment="Top" Width="73" Source="/image.png"/>
+    </Grid>
+</Window>

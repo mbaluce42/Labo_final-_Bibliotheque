@@ -1,0 +1,45 @@
+﻿<Window x:Class="GUI_Bibliotheque.ModifierLivreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modifier Livre" Height="300" Width="400">
+    <Grid Background="#FFDCECFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="ISBN:"/>
+        <TextBox x:Name="isbnTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Titre:"/>
+        <TextBox x:Name="titreTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Auteur:"/>
+        <TextBox x:Name="auteurTextBox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Éditeur:"/>
+        <TextBox x:Name="editeurTextBox" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Date de publication:"/>
+        <TextBox x:Name="dpTextBox" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Nombre de pages:"/>
+        <TextBox x:Name="nbpTextBox" Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+        <Button x:Name="enregistrerButton" Content="Enregistrer" Grid.Row="8" Grid.Column="0" Click="EnregistrerButton_Click" Margin="5"/>
+        <Button x:Name="annulerButton" Content="Annuler" Grid.Row="8" Grid.Column="1" Click="AnnulerButton_Click" Margin="5"/>
+    </Grid>
+</Window>

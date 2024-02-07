@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CL_bibliotheque\CL_bibliotheque.csproj" />
+    <ProjectReference Include="..\CL_Utils\CL_Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image.png" />
+  </ItemGroup>
+
+</Project>
