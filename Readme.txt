@@ -19,7 +19,7 @@ Ce projet C# de gestion de bibliothèque permet d'enregistrer des abonnés, des 
 
 ## Installation et exécution
 
-1. Clonez ou téléchargez le projet depuis le dépôt GitHub : [lien_vers_le_projet](lien_vers_le_projet)
+1. Clonez ou téléchargez le projet depuis le dépôt GitHub
 2. Ouvrez le projet dans votre environnement de développement C# (par exemple, Visual Studio).
 3. Compilez le projet pour vérifier qu'il n'y a pas d'erreurs de compilation.
 4. Exécutez l'application.
